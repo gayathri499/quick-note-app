@@ -60,31 +60,3 @@ This app writes to a local JSON file, so it needs a host with a **persistent
 filesystem** (not a stateless serverless platform like Vercel functions,
 where the filesystem resets between invocations).
 
-### Option A — Render (recommended, free tier)
-
-1. Push this repo to GitHub.
-2. Go to [render.com](https://render.com) → **New +** → **Web Service** →
-   connect your repo.
-3. Render will detect `render.yaml` automatically, or set manually:
-   - Build command: `npm install`
-   - Start command: `npm start`
-4. Deploy. You'll get a live URL like `https://quick-note-app.onrender.com`.
-
-### Option B — Railway
-
-1. Push to GitHub, then [railway.app](https://railway.app) → **New Project**
-   → **Deploy from GitHub repo**.
-2. Railway auto-detects Node.js and runs `npm start`. No extra config needed.
-
-### Option C — Netlify (frontend) + Render (backend)
-
-If you'd rather split it, deploy `public/` as a static site on Netlify and
-the Express API on Render, then update `API_URL` in `public/script.js` to
-the full Render URL. For the "single deployed app URL" requirement in the
-task, Option A or B (single service serving both) is simpler.
-
-## Submission checklist (per the task card)
-
-- [ ] Push this project to a GitHub repository
-- [ ] Deploy it (Render/Railway — see above)
-- [ ] Submit: **GitHub repo link** + **deployed live app URL**
